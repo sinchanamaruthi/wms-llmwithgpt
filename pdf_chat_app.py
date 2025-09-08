@@ -1,11 +1,12 @@
-import streamlit as st
-import fitz  # pip install PyMuPDF
-import openai
 
-# -----------------------------
-# CONFIG
-# -----------------------------
-openai.api_key = "YOUR_OPENAI_API_KEY"  # replace with your API key
+import streamlit as st
+import openai
+import fitz  # PyMuPDF
+
+# Set OpenAI API key from Streamlit secrets
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+
+
 
 st.set_page_config(page_title="PDF Chat Assistant", layout="wide")
 st.title("📄 PDF Chat Assistant")
